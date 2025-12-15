@@ -3,7 +3,7 @@ import Form from "../components/Form";
 
 import { useQuery } from "@tanstack/react-query";
 
-const api = "https://social-api-15e4.onrender.com/";
+const api = "https://social-api-15e4.onrender.com";
 
 async function fetchPosts() {
 	const res = await fetch(`${api}/posts`);
@@ -25,13 +25,13 @@ export default function Posts() {
 	}
 
 	if (error) {
-		return <div>{error}</div>;
+		return <div>{error.message || "Failed to load posts"}</div>;
 	}
 
 	return (
 		<div>
 			<Form />
-			{posts.map(post => {
+			{(posts || []).map(post => {
 				return (
 					<Post
 						key={post.id}

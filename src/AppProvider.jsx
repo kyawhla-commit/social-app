@@ -18,14 +18,19 @@ export default function AppProvider({ children }) {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
+        if (!token) return;
 
         fetch(`${api}/users/verify`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
         }).then(async res => {
-            const verifiedUser = await res.json();
-            setUser(verifiedUser);
+            if (res.ok) {
+                const verifiedUser = await res.json();
+                setUser(verifiedUser);
+            }
+        }).catch(() => {
+            // API not available or error
         });
     }, []);
 

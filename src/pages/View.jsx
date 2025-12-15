@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 import { useApp, queryClient } from "../AppProvider";
 
-const api = "https://social-api-15e4.onrender.com/";
+const api = "https://social-api-15e4.onrender.com";
 
 async function fetchPost(id) {
 	const res = await fetch(`${api}/posts/${id}`);
@@ -65,13 +65,17 @@ export default function View() {
 	}
 
 	if (error) {
-		return <div>{error}</div>;
+		return <div>{error.message || "Failed to load post"}</div>;
+	}
+
+	if (!post) {
+		return <div>Post not found</div>;
 	}
 
 	return (
 		<div>
 			<Post post={post} />
-			{post.comments.map(comment => {
+			{(post.comments || []).map(comment => {
 				return (
 					<Comment
 						key={comment.id}
