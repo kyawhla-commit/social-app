@@ -3,7 +3,7 @@ import { Box, Button, OutlinedInput, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 
-const api = "https://social-api-15e4.onrender.com/";
+const api = "https://social-api-15e4.onrender.com";
 
 export default function Register() {
     const navigate = useNavigate();
