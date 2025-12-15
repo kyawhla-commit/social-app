@@ -22,7 +22,7 @@ import {
     ChatBubbleOutline,
 } from "@mui/icons-material";
 
-const api = "http://localhost:8800";
+const api = "https://social-api-15e4.onrender.com/";
 
 export default function Post({ post, hideActions = false }) {
     const { user } = useApp();

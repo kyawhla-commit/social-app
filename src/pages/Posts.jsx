@@ -3,7 +3,7 @@ import Form from "../components/Form";
 
 import { useQuery } from "@tanstack/react-query";
 
-const api = "http://localhost:8800";
+const api = "https://social-api-15e4.onrender.com/";
 
 async function fetchPosts() {
 	const res = await fetch(`${api}/posts`);

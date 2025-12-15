@@ -9,7 +9,7 @@ const AppContext = createContext();
 
 export const queryClient = new QueryClient();
 
-const api = "http://localhost:8800";
+const api = "https://social-api-15e4.onrender.com/";
 
 export default function AppProvider({ children }) {
 	const [mode, setMode] = useState("dark");

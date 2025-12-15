@@ -9,7 +9,7 @@ import {
     Box,
 } from "@mui/material";
 
-const api = "http://localhost:8800";
+const api = "https://social-api-15e4.onrender.com/";
 
 export default function Form() {
     const [content, setContent] = useState("");

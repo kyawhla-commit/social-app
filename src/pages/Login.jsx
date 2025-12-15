@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { useApp } from "../AppProvider";
 
-const api = "http://localhost:8800";
+const api = "https://social-api-15e4.onrender.com/";
 
 export default function Login() {
 	const navigate = useNavigate();

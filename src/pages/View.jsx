@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 import { useApp, queryClient } from "../AppProvider";
 
-const api = "http://localhost:8800";
+const api = "https://social-api-15e4.onrender.com/";
 
 async function fetchPost(id) {
 	const res = await fetch(`${api}/posts/${id}`);
