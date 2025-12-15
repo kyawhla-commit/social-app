@@ -4,7 +4,7 @@ import { grey } from "@mui/material/colors";
 import { useApp, queryClient } from "../AppProvider";
 import { useParams } from "react-router";
 
-const api = "https://social-api-15e4.onrender.com/";
+const api = "https://social-api-15e4.onrender.com";
 
 export default function Comment({ comment }) {
     const { user } = useApp();
